@@ -300,7 +300,6 @@ scripts/    calibrate, run_experiment, analyze, critic_probe, measure_llm_overla
 setup/      download, build and model scripts
 tests/      pytest suite
 results/    round 1 tables and plot; v2*/ round 2 and follow-ups; transcripts/ every agent conversation
-docs/       design and plan
 ```
 
 ## License

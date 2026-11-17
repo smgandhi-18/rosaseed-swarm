@@ -2,7 +2,13 @@ import os
 import stat
 from pathlib import Path
 
+import pytest
+
 from swarm.runner import parse_time_v, run_once, run_with_retry
+
+# The runner measures every alignment with GNU time; these tests need it installed.
+needs_gnu_time = pytest.mark.skipif(not os.access("/usr/bin/time", os.X_OK),
+                                    reason="GNU time (/usr/bin/time) is not installed")
 
 TIME_V = """\tCommand being timed: "x"
 \tUser time (seconds): 10.25
@@ -26,6 +32,7 @@ def test_parse_time_v():
     assert parse_time_v("Elapsed (wall clock) time (h:mm:ss or m:ss): 1:00:01")["wall_s"] == 3601
 
 
+@needs_gnu_time
 def test_ok_run_writes_sam(tmp_path):
     cmd = [_script(tmp_path, "echo '@HD'; echo noise >&2")]
     r = run_once(cmd, tmp_path / "out.sam", timeout_s=10)
@@ -34,12 +41,14 @@ def test_ok_run_writes_sam(tmp_path):
     assert r.wall_s >= 0 and r.peak_rss_kb > 0
 
 
+@needs_gnu_time
 def test_timeout_kills(tmp_path):
     cmd = [_script(tmp_path, "sleep 30")]
     r = run_once(cmd, tmp_path / "out.sam", timeout_s=1)
     assert r.status == "timeout"
 
 
+@needs_gnu_time
 def test_retry_once_after_crash(tmp_path):
     flag = tmp_path / "failed_once"
     cmd = [_script(tmp_path, f'if [ ! -e {flag} ]; then touch {flag}; exit 3; fi; echo ok')]
@@ -47,6 +56,7 @@ def test_retry_once_after_crash(tmp_path):
     assert r.status == "ok" and r.attempts == 2
 
 
+@needs_gnu_time
 def test_two_crashes_is_crash(tmp_path):
     cmd = [_script(tmp_path, "echo boom >&2; exit 3")]
     r = run_with_retry(cmd, tmp_path / "out.sam", timeout_s=10)
@@ -54,6 +64,7 @@ def test_two_crashes_is_crash(tmp_path):
     assert "boom" in r.stderr_tail
 
 
+@needs_gnu_time
 def test_timeout_is_not_retried(tmp_path):
     cmd = [_script(tmp_path, "sleep 30")]
     r = run_with_retry(cmd, tmp_path / "out.sam", timeout_s=1)
