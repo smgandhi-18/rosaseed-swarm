@@ -162,9 +162,9 @@ only swarm repeat that succeeded. The best configurations random search found ke
 at 2000-5000 and use the earlier pre-chain trigger (`t50w60`) with longer seeds (k 23-25).
 
 Round-2 random search used the same seeds as round 1, so it re-scored the same 72
-configurations under the new rule rather than drawing new ones. With about 10 % of
-configurations valid, 24 random draws contain a valid one with probability
-1 − 0.9^24 ≈ 92 %, so its 3 of 3 is what chance predicts.
+configurations under the new rule rather than drawing new ones. 17 of those 72 uniform
+draws (24 %) are valid, so 24 draws contain at least one valid configuration with
+probability 1 − 0.76^24 > 99 %: its 3 of 3 is what chance predicts.
 
 ![Round 2 search progress](results/v2/best_so_far.png)
 

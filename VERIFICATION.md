@@ -175,7 +175,7 @@ limits and tool fields were confirmed correct. Important findings:
 |---|---|
 | The planner and critic prompts never contained the v2 rule; only the searchers saw it. The first round-2 swarm therefore planned without knowing confident errors count, so "the plan trapped the swarm" was partly my omission | Planner and critic now get the rule under v2 (round-1 prompts unchanged). The first round-2 swarm runs are kept as `swarm-v2-uninformed` (and `swarm-norepeat-v2-uninformed`) and the swarm was rerun with the informed planner; both are reported |
 | `analyze.py` and `critic_probe.py` could score a round under the wrong rule if `--rule` was forgotten | The rule now comes from the condition names (`-v2`); a mismatch stops the script; `results.csv` and `claims.csv` record the rule |
-| Round-2 random search used the same seeds as round 1, so it re-timed the same 72 configurations | Disclosed (README). It is a paired re-scoring, not an independent sample; with ~10 % of configurations valid, 24 random draws contain a valid one with probability ≈ 1 − 0.9^24 ≈ 92 % |
+| Round-2 random search used the same seeds as round 1, so it re-timed the same 72 configurations | Disclosed (README). It is a paired re-scoring, not an independent sample; 17 of the 72 uniform draws (24 %) are valid, so 24 draws contain a valid one with probability 1 − 0.76^24 > 99 % (an earlier version said ~10 % and 92 %, using all logged configurations, which are skewed toward the agents' low-cap choices) |
 | `run_experiment.py` could delete a running repeat's rows before rejecting a bad name | All names are checked before anything is deleted; a lock file allows one experiment process at a time |
 
 Minor findings fixed: stale summary wording under v2, plot labels and end values for
