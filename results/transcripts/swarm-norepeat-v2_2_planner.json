@@ -1,0 +1,92 @@
+{
+  "planner_fallback": false,
+  "planner_attempts": [
+    {
+      "raw": "{\n  \"regions\": [\n    {\n      \"name\": \"explorer1\",\n      \"rationale\": \"Focus on high sensitivity with moderate speed by using longer seeds and lower caps, while enabling early exit for efficiency.\",\n      \"constraints\": {\n        \"k\": {\"min\": 15, \"max\": 20},\n        \"cap\": [50, 100],\n        \"gap\": {\"min\": 1, \"max\": 5},\n        \"gap_step\": {\"min\": 1, \"max\": 5},\n        \"early_exit\": true\n      }\n    },\n    {\n      \"name\": \"explorer2\",\n      \"rationale\": \"Prioritize speed with shorter seeds and higher caps, while reducing unnecessary lookups and enabling early exit for faster processing.\",\n      \"constraints\": {\n        \"k\": {\"min\": 20, \"max\": 25},\n        \"cap\": [200, 500],\n        \"gap\": {\"min\": 5, \"max\": 10},\n        \"gap_step\": {\"min\": 5, \"max\": 10},\n        \"frc\": false\n      }\n    },\n    {\n      \"name\": \"explorer3\",\n      \"rationale\": \"Balance between sensitivity and speed by using medium seeds, moderate caps, and limiting unnecessary lookups while retaining flexibility.\",\n      \"constraints\": {\n        \"k\": {\"min\": 18, \"max\": 22},\n        \"cap\": [100, 200],\n        \"gap\": {\"min\": 3, \"max\": 8},\n        \"gap_step\": {\"min\": 3, \"max\": 8},\n        \"prechain\": [\"t50w60\", \"t50w80\"]\n      }\n    }\n  ]\n}",
+      "error": null
+    }
+  ],
+  "regions": [
+    {
+      "name": "explorer1",
+      "rationale": "Focus on high sensitivity with moderate speed by using longer seeds and lower caps, while enabling early exit for efficiency.",
+      "constraints": {
+        "k": {
+          "min": 15,
+          "max": 20
+        },
+        "cap": [
+          50,
+          100
+        ],
+        "gap": {
+          "min": 1,
+          "max": 5
+        },
+        "gap_step": {
+          "min": 1,
+          "max": 5
+        },
+        "early_exit": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "explorer2",
+      "rationale": "Prioritize speed with shorter seeds and higher caps, while reducing unnecessary lookups and enabling early exit for faster processing.",
+      "constraints": {
+        "k": {
+          "min": 20,
+          "max": 25
+        },
+        "cap": [
+          200,
+          500
+        ],
+        "gap": {
+          "min": 5,
+          "max": 10
+        },
+        "gap_step": {
+          "min": 5,
+          "max": 10
+        },
+        "frc": [
+          false
+        ]
+      }
+    },
+    {
+      "name": "explorer3",
+      "rationale": "Balance between sensitivity and speed by using medium seeds, moderate caps, and limiting unnecessary lookups while retaining flexibility.",
+      "constraints": {
+        "k": {
+          "min": 18,
+          "max": 22
+        },
+        "cap": [
+          100,
+          200
+        ],
+        "gap": {
+          "min": 3,
+          "max": 8
+        },
+        "gap_step": {
+          "min": 3,
+          "max": 8
+        },
+        "prechain": [
+          "t50w60",
+          "t50w80"
+        ]
+      }
+    }
+  ],
+  "final_claim_ids": [
+    107,
+    109,
+    108
+  ]
+}

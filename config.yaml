@@ -1,0 +1,27 @@
+# All paths are relative to the repository root.
+paths:
+  bin_dir: work/bin
+  bwa_index: work/index/bwa/chr22.fa
+  rs_index: work/index/rs_chr22/
+  reads:
+    A: [work/data/reads_A_1.fq, work/data/reads_A_2.fq]
+    B: [work/data/reads_B_1.fq, work/data/reads_B_2.fq]
+  runs_dir: work/runs
+  db: work/results.sqlite
+
+# CPU layout (AMD die = 6 cores sharing one L3). Die D (18-23, 42-47) is left unused.
+cpus:
+  ollama: "2-5,26-29"
+  workers: ["6-11", "12-17"]
+threads: 6
+n_workers: 1          # calibration: a busy neighbour die adds +0.10 s (> 2 SD), so runs are serial
+timeout_s: 300
+budget: 24            # RosaSeed runs on set A per condition and repeat
+accuracy_tol_bp: 20
+
+llm:
+  backend: ollama     # "anthropic" is a stub, not implemented
+  model: qwen3:8b
+  host: http://127.0.0.1:11435
+  temperature: 0.7
+  max_turns: 40

@@ -1,0 +1,7 @@
+work/
+.venv/
+.env
+*.sam
+__pycache__/
+.pytest_cache/
+.superpowers/

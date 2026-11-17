@@ -1,0 +1,7 @@
+condition,repeat,rule,search_runs,real_runs,crashes,best_speedup_A,wall_s,llm_calls,prompt_tokens,completion_tokens,model_s,claims_expected,claims_submitted,wrong_claims,answer_without_critic_correct,verified_speedup_B,verified_config,runs_to_best,final_confident_wrong_B,candidates_failing_B,planner_fallback,critic_caught,critic_missed,critic_false_alarm,critic_correct_accept,critic_undecided,answer_with_critic_correct
+single-norepeat-v2,1,v2,4,4,0,1.0,100.7,64,215838,3828,83.4,1,0,1,False,1.0,default (nothing beat it on B),,,0,,,,,,,
+swarm-norepeat-v2,1,v2,23,23,0,1.0,173.8,72,201219,5254,135.3,3,2,3,False,1.0,default (nothing beat it on B),,,0,False,2,0,0,0,0,False
+single-norepeat-v2,2,v2,12,12,0,1.0,139.1,64,228900,3821,84.8,1,0,1,False,1.0,default (nothing beat it on B),,,0,,,,,,,
+swarm-norepeat-v2,2,v2,24,24,0,1.0,139.1,56,103831,2934,72.4,3,3,3,False,1.0,default (nothing beat it on B),,,0,False,0,0,0,0,3,False
+single-norepeat-v2,3,v2,6,6,0,1.0,109.7,64,215261,3872,84.2,1,0,1,False,1.0,default (nothing beat it on B),,,0,,,,,,,
+swarm-norepeat-v2,3,v2,23,23,0,1.0,172.6,75,215679,5270,136.7,3,2,3,False,1.0,default (nothing beat it on B),,,0,False,2,0,0,0,0,False

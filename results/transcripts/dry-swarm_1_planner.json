@@ -1,0 +1,39 @@
+{
+  "planner_fallback": true,
+  "regions": [
+    {
+      "name": "explorer1",
+      "rationale": "fallback: no pre-chain filter",
+      "constraints": {
+        "prechain": [
+          "off"
+        ]
+      }
+    },
+    {
+      "name": "explorer2",
+      "rationale": "fallback: early pre-chain trigger",
+      "constraints": {
+        "prechain": [
+          "t50w60",
+          "t50w80"
+        ]
+      }
+    },
+    {
+      "name": "explorer3",
+      "rationale": "fallback: late pre-chain trigger",
+      "constraints": {
+        "prechain": [
+          "t200w60",
+          "t200w80"
+        ]
+      }
+    }
+  ],
+  "final_claim_ids": [
+    33,
+    34,
+    35
+  ]
+}

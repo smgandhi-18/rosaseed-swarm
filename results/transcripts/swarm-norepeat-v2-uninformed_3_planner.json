@@ -1,0 +1,77 @@
+{
+  "planner_fallback": false,
+  "planner_attempts": [
+    {
+      "raw": "{\n  \"regions\": [\n    {\n      \"name\": \"explorer1\",\n      \"rationale\": \"Focus on high sensitivity with moderate speed by using longer seeds and lower cap values, while enabling frc and early_exit for efficiency.\",\n      \"constraints\": {\n        \"k\": {\"min\": 15, \"max\": 20},\n        \"cap\": [50, 100],\n        \"frc\": true,\n        \"early_exit\": true\n      }\n    },\n    {\n      \"name\": \"explorer2\",\n      \"rationale\": \"Balance speed and accuracy by reducing the number of seeds with higher cap and using shorter seeds, while disabling frc to save computation.\",\n      \"constraints\": {\n        \"k\": {\"min\": 20, \"max\": 25},\n        \"cap\": [200, 500],\n        \"frc\": false,\n        \"early_exit\": false\n      }\n    },\n    {\n      \"name\": \"explorer3\",\n      \"rationale\": \"Optimize for speed with very short seeds and high cap values, while using prechain filters to reduce unnecessary chain extensions and disable frc.\",\n      \"constraints\": {\n        \"k\": {\"min\": 15, \"max\": 18},\n        \"cap\": [1000, 2000],\n        \"prechain\": [\"t50w60\", \"t50w80\"],\n        \"frc\": false\n      }\n    }\n  ]\n}",
+      "error": null
+    }
+  ],
+  "regions": [
+    {
+      "name": "explorer1",
+      "rationale": "Focus on high sensitivity with moderate speed by using longer seeds and lower cap values, while enabling frc and early_exit for efficiency.",
+      "constraints": {
+        "k": {
+          "min": 15,
+          "max": 20
+        },
+        "cap": [
+          50,
+          100
+        ],
+        "frc": [
+          true
+        ],
+        "early_exit": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "explorer2",
+      "rationale": "Balance speed and accuracy by reducing the number of seeds with higher cap and using shorter seeds, while disabling frc to save computation.",
+      "constraints": {
+        "k": {
+          "min": 20,
+          "max": 25
+        },
+        "cap": [
+          200,
+          500
+        ],
+        "frc": [
+          false
+        ],
+        "early_exit": [
+          false
+        ]
+      }
+    },
+    {
+      "name": "explorer3",
+      "rationale": "Optimize for speed with very short seeds and high cap values, while using prechain filters to reduce unnecessary chain extensions and disable frc.",
+      "constraints": {
+        "k": {
+          "min": 15,
+          "max": 18
+        },
+        "cap": [
+          1000,
+          2000
+        ],
+        "prechain": [
+          "t50w60",
+          "t50w80"
+        ],
+        "frc": [
+          false
+        ]
+      }
+    }
+  ],
+  "final_claim_ids": [
+    93,
+    94,
+    95
+  ]
+}

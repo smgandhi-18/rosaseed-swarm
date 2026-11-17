@@ -1,0 +1,7 @@
+repeat,kind,claim_id,correct,verdict,reason
+3,bad_acc,82,False,reject,Speedup is not above 1.007.
+3,real,83,False,reject,Valid on held-out set B is false.
+3,never_run,84,False,reject,Valid on held-out set B is false.
+3,real,85,True,reject,Speedup is not above 1.007.
+3,real,86,False,reject,Valid on held-out set B is false.
+3,inflated,87,False,accept,Speedup is above 1.007 and valid on held-out set B.

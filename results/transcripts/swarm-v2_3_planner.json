@@ -1,0 +1,82 @@
+{
+  "planner_fallback": false,
+  "planner_attempts": [
+    {
+      "raw": "{\n  \"regions\": [\n    {\n      \"name\": \"explorer1\",\n      \"rationale\": \"Focus on high sensitivity with moderate speed by using longer seeds and lower cap values to capture more unique seeds, while keeping gap parameters to ensure thorough coverage.\",\n      \"constraints\": {\n        \"k\": {\"min\": 15, \"max\": 20},\n        \"cap\": {\"min\": 50, \"max\": 100},\n        \"gap\": {\"min\": 1, \"max\": 5},\n        \"gap_step\": {\"min\": 1, \"max\": 5}\n      }\n    },\n    {\n      \"name\": \"explorer2\",\n      \"rationale\": \"Optimize for speed with shorter seeds and higher cap values to reduce computational load, while maintaining reasonable gap parameters to avoid missing important alignments.\",\n      \"constraints\": {\n        \"k\": {\"min\": 20, \"max\": 25},\n        \"cap\": {\"min\": 100, \"max\": 500},\n        \"gap\": {\"min\": 5, \"max\": 10},\n        \"gap_step\": {\"min\": 5, \"max\": 10}\n      }\n    },\n    {\n      \"name\": \"explorer3\",\n      \"rationale\": \"Balance between sensitivity and speed by using medium seeds and cap values, with moderate gap parameters to ensure coverage without excessive computation.\",\n      \"constraints\": {\n        \"k\": {\"min\": 18, \"max\": 22},\n        \"cap\": {\"min\": 150, \"max\": 300},\n        \"gap\": {\"min\": 3, \"max\": 8},\n        \"gap_step\": {\"min\": 3, \"max\": 8}\n      }\n    }\n  ]\n}",
+      "error": null
+    }
+  ],
+  "regions": [
+    {
+      "name": "explorer1",
+      "rationale": "Focus on high sensitivity with moderate speed by using longer seeds and lower cap values to capture more unique seeds, while keeping gap parameters to ensure thorough coverage.",
+      "constraints": {
+        "k": {
+          "min": 15,
+          "max": 20
+        },
+        "cap": [
+          50,
+          100
+        ],
+        "gap": {
+          "min": 1,
+          "max": 5
+        },
+        "gap_step": {
+          "min": 1,
+          "max": 5
+        }
+      }
+    },
+    {
+      "name": "explorer2",
+      "rationale": "Optimize for speed with shorter seeds and higher cap values to reduce computational load, while maintaining reasonable gap parameters to avoid missing important alignments.",
+      "constraints": {
+        "k": {
+          "min": 20,
+          "max": 25
+        },
+        "cap": [
+          100,
+          200,
+          500
+        ],
+        "gap": {
+          "min": 5,
+          "max": 10
+        },
+        "gap_step": {
+          "min": 5,
+          "max": 10
+        }
+      }
+    },
+    {
+      "name": "explorer3",
+      "rationale": "Balance between sensitivity and speed by using medium seeds and cap values, with moderate gap parameters to ensure coverage without excessive computation.",
+      "constraints": {
+        "k": {
+          "min": 18,
+          "max": 22
+        },
+        "cap": [
+          200
+        ],
+        "gap": {
+          "min": 3,
+          "max": 8
+        },
+        "gap_step": {
+          "min": 3,
+          "max": 8
+        }
+      }
+    }
+  ],
+  "final_claim_ids": [
+    102,
+    103,
+    104
+  ]
+}

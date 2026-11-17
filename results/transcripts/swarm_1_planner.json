@@ -1,0 +1,82 @@
+{
+  "planner_fallback": false,
+  "planner_attempts": [
+    {
+      "raw": "{\n  \"regions\": [\n    {\n      \"name\": \"explorer1\",\n      \"rationale\": \"Focuses on speed with minimal seed specificity, using shorter seeds and lower cap values to reduce computational overhead while maintaining reasonable sensitivity.\",\n      \"constraints\": {\n        \"k\": {\"min\": 15, \"max\": 20},\n        \"cap\": {\"min\": 50, \"max\": 100},\n        \"gap\": {\"min\": 1, \"max\": 5},\n        \"gap_step\": {\"min\": 1, \"max\": 5}\n      }\n    },\n    {\n      \"name\": \"explorer2\",\n      \"rationale\": \"Balances speed and sensitivity by using moderate seed lengths and cap values, with slightly more gap exploration for better alignment coverage.\",\n      \"constraints\": {\n        \"k\": {\"min\": 18, \"max\": 22},\n        \"cap\": {\"min\": 100, \"max\": 200},\n        \"gap\": {\"min\": 5, \"max\": 10},\n        \"gap_step\": {\"min\": 5, \"max\": 10}\n      }\n    },\n    {\n      \"name\": \"explorer3\",\n      \"rationale\": \"Prioritizes sensitivity over speed with longer seeds and higher cap values, allowing for more comprehensive seed exploration while maintaining reasonable performance.\",\n      \"constraints\": {\n        \"k\": {\"min\": 20, \"max\": 25},\n        \"cap\": {\"min\": 200, \"max\": 500},\n        \"gap\": {\"min\": 10, \"max\": 15},\n        \"gap_step\": {\"min\": 10, \"max\": 10}\n      }\n    }\n  ]\n}",
+      "error": null
+    }
+  ],
+  "regions": [
+    {
+      "name": "explorer1",
+      "rationale": "Focuses on speed with minimal seed specificity, using shorter seeds and lower cap values to reduce computational overhead while maintaining reasonable sensitivity.",
+      "constraints": {
+        "k": {
+          "min": 15,
+          "max": 20
+        },
+        "cap": [
+          50,
+          100
+        ],
+        "gap": {
+          "min": 1,
+          "max": 5
+        },
+        "gap_step": {
+          "min": 1,
+          "max": 5
+        }
+      }
+    },
+    {
+      "name": "explorer2",
+      "rationale": "Balances speed and sensitivity by using moderate seed lengths and cap values, with slightly more gap exploration for better alignment coverage.",
+      "constraints": {
+        "k": {
+          "min": 18,
+          "max": 22
+        },
+        "cap": [
+          100,
+          200
+        ],
+        "gap": {
+          "min": 5,
+          "max": 10
+        },
+        "gap_step": {
+          "min": 5,
+          "max": 10
+        }
+      }
+    },
+    {
+      "name": "explorer3",
+      "rationale": "Prioritizes sensitivity over speed with longer seeds and higher cap values, allowing for more comprehensive seed exploration while maintaining reasonable performance.",
+      "constraints": {
+        "k": {
+          "min": 20,
+          "max": 25
+        },
+        "cap": [
+          200,
+          500
+        ],
+        "gap": {
+          "min": 10,
+          "max": 15
+        },
+        "gap_step": {
+          "min": 10,
+          "max": 10
+        }
+      }
+    }
+  ],
+  "final_claim_ids": [
+    41,
+    42,
+    40
+  ]
+}

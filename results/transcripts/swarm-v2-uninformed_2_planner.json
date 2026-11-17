@@ -1,0 +1,72 @@
+{
+  "planner_fallback": false,
+  "planner_attempts": [
+    {
+      "raw": "{\n  \"regions\": [\n    {\n      \"name\": \"explorer1\",\n      \"rationale\": \"Focus on high sensitivity with moderate speed by using longer seeds and lower caps, while keeping early_exit off to ensure thorough gap filling.\",\n      \"constraints\": {\n        \"k\": {\"min\": 15, \"max\": 20},\n        \"cap\": [50, 100],\n        \"early_exit\": [false]\n      }\n    },\n    {\n      \"name\": \"explorer2\",\n      \"rationale\": \"Balance speed and sensitivity by using shorter seeds, higher caps, and early_exit on to reduce computation while maintaining good coverage.\",\n      \"constraints\": {\n        \"k\": {\"min\": 21, \"max\": 25},\n        \"cap\": [200, 500],\n        \"early_exit\": [true]\n      }\n    },\n    {\n      \"name\": \"explorer3\",\n      \"rationale\": \"Optimize for speed with minimal seed coverage and aggressive gap handling, suitable for high-throughput scenarios with less sensitivity concerns.\",\n      \"constraints\": {\n        \"k\": {\"min\": 21, \"max\": 25},\n        \"cap\": [500, 1000],\n        \"gap\": {\"min\": 1, \"max\": 5},\n        \"gap_step\": {\"min\": 1, \"max\": 5}\n      }\n    }\n  ]\n}",
+      "error": null
+    }
+  ],
+  "regions": [
+    {
+      "name": "explorer1",
+      "rationale": "Focus on high sensitivity with moderate speed by using longer seeds and lower caps, while keeping early_exit off to ensure thorough gap filling.",
+      "constraints": {
+        "k": {
+          "min": 15,
+          "max": 20
+        },
+        "cap": [
+          50,
+          100
+        ],
+        "early_exit": [
+          false
+        ]
+      }
+    },
+    {
+      "name": "explorer2",
+      "rationale": "Balance speed and sensitivity by using shorter seeds, higher caps, and early_exit on to reduce computation while maintaining good coverage.",
+      "constraints": {
+        "k": {
+          "min": 21,
+          "max": 25
+        },
+        "cap": [
+          200,
+          500
+        ],
+        "early_exit": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "explorer3",
+      "rationale": "Optimize for speed with minimal seed coverage and aggressive gap handling, suitable for high-throughput scenarios with less sensitivity concerns.",
+      "constraints": {
+        "k": {
+          "min": 21,
+          "max": 25
+        },
+        "cap": [
+          500,
+          1000
+        ],
+        "gap": {
+          "min": 1,
+          "max": 5
+        },
+        "gap_step": {
+          "min": 1,
+          "max": 5
+        }
+      }
+    }
+  ],
+  "final_claim_ids": [
+    77,
+    75,
+    76
+  ]
+}
